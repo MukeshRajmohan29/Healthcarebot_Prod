@@ -65,7 +65,7 @@ const ChatInterface = () => {
 
     try {
       // Send message to backend (Vercel serverless expects userInput and healthcareContext)
-      const response = await fetch('/api/chat', {
+      const response = await fetch('https://healthcarebot-prod-backend.vercel.app/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const ChatInterface = () => {
         addMessage(botMessage);
 
         // Save chat log
-        await fetch('/api/chatlog', {
+        await fetch('https://healthcarebot-prod-backend.vercel.app/api/chatlog', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
