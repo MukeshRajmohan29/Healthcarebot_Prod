@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Calendar, Calculator } from 'lucide-react';
+import { User, Calendar } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 const UserRegistration = ({ onRegister, healthcareContext, privacyStyle }) => {

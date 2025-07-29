@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, ChevronUp, Shield, Info, AlertTriangle } from 'lucide-react';
+import { Shield, Info, AlertTriangle } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 const PrivacyDisclosure = ({ privacyStyle, isVisible, onToggle }) => {

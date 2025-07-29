@@ -5,9 +5,8 @@ import { useChat } from '../contexts/ChatContext';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
 import SessionInfo from './SessionInfo';
-import PrivacyDisclosure from './PrivacyDisclosure';
 import UserRegistration from './UserRegistration';
-import { cn } from '../utils/cn';
+// Removed unused imports
 // Accessible skip link styles (for reference, not used as a variable)
 // const skipLinkStyles = `
 //   absolute left-2 top-2 z-50 px-4 py-2 bg-white text-blue-900 rounded shadow
@@ -25,13 +24,11 @@ const ChatInterface = () => {
     messages,
     isLoading,
     error,
-    privacyBoxVisible,
     welcomeMessage,
     addMessage,
     setLoading,
     setError,
     clearError,
-    togglePrivacyBox,
     registerUser
   } = useChat();
 
@@ -185,7 +182,6 @@ const ChatInterface = () => {
       <section
         className="flex-1 overflow-y-auto px-1 sm:px-0 py-2 sm:py-4 w-full flex flex-col gap-3 sm:gap-4 bg-gradient-to-b from-white/80 to-blue-50"
         aria-label="Chat messages"
-        role="region"
         tabIndex={0}
       >
         {/* Welcome message and session status */}
