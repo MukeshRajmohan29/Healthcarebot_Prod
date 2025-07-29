@@ -71,8 +71,10 @@ const ChatInterface = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userInput: content,
-          healthcareContext
+          message: content,
+          sessionId,
+          healthcareContext,
+          privacyStyle
         }),
       });
 
