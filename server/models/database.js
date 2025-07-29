@@ -47,4 +47,11 @@ async function initializeDatabase() {
   return pool;
 }
 
-module.exports = { initializeDatabase };
+function getDatabase() {
+  if (!pool) {
+    throw new Error('Database not initialized. Call initializeDatabase() first.');
+  }
+  return pool;
+}
+
+module.exports = { initializeDatabase, getDatabase };
