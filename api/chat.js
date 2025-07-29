@@ -6,6 +6,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const { initializeDatabase } = require('./_lib/database');
 const HEALTHCARE_CONTEXTS = {
   'symptom checking': {
     name: 'Symptom Checking',
@@ -44,29 +45,4 @@ const HEALTHCARE_CONTEXTS = {
   }
 };
 
-module.exports = async (req, res) => {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  // Validate input (add your validation logic here)
-  const { userInput, healthcareContext } = req.body;
-  if (!userInput || !healthcareContext) {
-    return res.status(400).json({ error: 'Missing required fields' });
-  }
-
-  const systemPrompt = HEALTHCARE_CONTEXTS[healthcareContext]?.systemPrompt || '';
-
-  try {
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userInput }
-      ]
-    });
-    res.status(200).json({ reply: completion.choices[0].message.content });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
+// This file is now deprecated. Backend logic has moved to /server for Render deployment.
