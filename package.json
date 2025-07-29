@@ -2,13 +2,8 @@
   "name": "caps-healthbot",
   "version": "1.0.0",
   "description": "Privacy-aware CAPS Healthbot with React frontend and Node.js backend",
-  "main": "server/index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+    "build": "cd client && npm run build"
   },
   "keywords": [
     "healthcare",
@@ -21,12 +16,5 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
-  },
-  "dependencies": {
-    "@types/react-router-dom": "^5.3.3",
-    "lucide-react": "^0.532.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^7.7.1"
   }
 }
