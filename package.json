@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Privacy-aware CAPS Healthbot with React frontend and Node.js backend",
   "scripts": {
-    "build": "npm run build:root && mv build client/build",
-    "build:root": "cd client && npm run build && mv build ../build"
+    "build": "cd client && npm run build"
   },
   "keywords": [
     "healthcare",
